@@ -1,49 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script>
+  <head>
+    <script>
+      let arrayDimension = prompt("Input dimension");
 
-let arrayDimension = prompt('Input dimension');
+      let array = [0];
+      array.length = arrayDimension;
 
-let array = [0];
-array.length =arrayDimension;
+      for (let i = 0; i < array.length; i++) {
+        array[i] = prompt("Input element");
+        console.log(array[i]);
+      }
+    </script>
 
-for(let i=0;i<array.length;i++){
-    array[i] = prompt('Input element')
-    console.log(array[i]);
+    <script>
+      //array1 = array;
+      let maxElement = 0;
+
+      for (let i = 0; i <= array.length; i++) {
+        if (maxElement < array[i]) {
+          maxElement = array[i];
+        }
+      }
+      console.log("MAXELEMENT" + " " + maxElement);
+
+      alert("MAXELEMENT" + " " + maxElement);
+    </script>
+    <script>
+let count ={};
+for(let element of array){
+  if(count[element]===undefined){
+    count[element]=1;
+  }else{
+    count[element]++;
+  }
 }
+console.log(count);
+alert(count)
 
-</script>
+    </script>
 
-<script>
-//array1 = array;
-let maxElement = 0;
-
-    for(let i=0;i<=array.length;i++){
-    
-    if ( maxElement < array[i] ){
-  maxElement = array[i];
-}
-}
-   console.log("MAXELEMENT" +" "+ maxElement);
-
-alert("MAXELEMENT" +" "+ maxElement)
-   
-
-
-
-
-</script>
-
-
-
-<div> Maximal fugure is maxElement </div>
-
-
-
-</head>    
-
-
-
-
+    <div>Maximal fugure is maxElement</div>
+  </head>
 </html>
