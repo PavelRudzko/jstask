@@ -1,0 +1,89 @@
+<html>
+  <script
+    src="https://unpkg.com/react@16/umd/react.production.min.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+    crossorigin
+  ></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/babel">
+    let reguestURL = 'https://cataas.com/api/tags';
+    const request = new XMLHttpRequest();
+
+    request.open('GET',reguestURL);
+
+    request.responseType = "json";
+    request.send();
+
+    request.onload = function(){
+    let onLinecats =request.response;
+
+    catsHeader(onLineCats)
+    showCats(onLineCats)
+
+    }
+             const onLineCats = [
+        {
+        "_id": "string",
+        "tags": [],
+        "owner": "string",
+        "createdAt": "string",
+        "updatedAt": "string"
+      }
+    ]
+           
+    
+    const cats = [
+      { name: "Barsik", age: 2 },
+      { name: "Funtik", age: 1 },
+    ];
+
+    const CatListComp = ({ catsList = [] }) => {
+      //TO DO if data loading ,accsess denid or somthing else EXEPTION
+
+      const isFinderValid = catsList && catsList.length > 0;
+
+      return (
+        <div>
+          {!isFinderValid && <p> All cats are buisy </p>}
+
+          {isFinderValid &&
+            catsList.map((cat) => {
+              return (
+                <div>
+                  <h2>{cat.name}</h2>
+                  <p>
+                    {" "}
+                    {'AGE'+ ' ' + cat.age}
+                    {"  "}
+                    <button> Okropny kot </button>
+                    {"  "}
+                    <button> Fajny kotek </button>
+                  </p>
+                </div>
+              );
+            })}
+        </div>
+      );
+    };
+
+    const App = () => {
+      return (
+        <div>
+          <h1>
+            Teraz znojdzemy
+            {"  "}
+            <button> Szukaj </button>
+          </h1>
+          <CatListComp catsList={cats} />
+        </div>
+      );
+    };
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

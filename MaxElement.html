@@ -14,7 +14,6 @@
     </script>
 
     <script>
-      //array1 = array;
       let maxElement = 0;
 
       for (let i = 0; i <= array.length; i++) {
@@ -27,19 +26,61 @@
       alert("MAXELEMENT" + " " + maxElement);
     </script>
     <script>
-let count ={};
-for(let element of array){
-  if(count[element]===undefined){
-    count[element]=1;
-  }else{
-    count[element]++;
-  }
-}
-console.log(count);
-alert(count)
+      let count = {};
+      for (let element of array) {
+        if (count[element] === undefined) {
+          count[element] = 1;
+        } else {
+          count[element]++;
+        }
+      }
+      console.log(count);
+      let objToArray = Object.entries(count);
 
+      console.log(objToArray);
+      console.log(objToArray[0]);
     </script>
 
-    <div>Maximal fugure is maxElement</div>
+    <script>
+      // let maxCount = 0;
+      for (let i = 0; i < count.length; i++) {
+        let maxCount = 0;
+        if (maxCount < count.element) {
+          maxCount = count.element;
+        }
+
+        alert("MaxCount Is   " + maxCount);
+      }
+      //   alert("MaxCount Is   " + maxCount);
+    </script>
   </head>
+
+  <body>
+    <h2>Array is</h2>
+    <h3 id="array_out">array_out</h3>
+    <h2>Maxelement is</h2>
+    <h3 id="maxElement_out"> maxElement_out</h3>
+    <h2>Count is</h2>
+    <h3 id="count_out"> count_out</h3>
+
+    <h2> Count array is  </h2>
+    <h3 id="objToArray_out"> objToArray</h3>
+    
+    <script>
+       let array_out = document.getElementById("array_out");
+      array_out.innerHTML = array;
+    
+      
+      let maxElement_out = document.getElementById("maxElement_out");
+      maxElement_out.innerHTML = maxElement;
+
+      let count_out = document.getElementById("count_out");
+      count_out.innerHTML = count;
+
+
+      let objToArray_out = document.getElementById("objToArray_out");
+      objToArray_out.innerHTML = objToArray;
+
+    </script>
+  </body>
 </html>
