@@ -5,11 +5,7 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      // const cats = [
-      //   { name: "Barsik", age: 2 },
-      //   { name: "Funtik", age: 1 },
-      // ];
-
+      
       const PersonListComp = ({ personList = [] }) => {
         //TO DO if data loading ,accsess denid or somthing else EXEPTION
 
@@ -38,7 +34,7 @@
         );
       };
 
-      const Person = ({ person }) => {
+        const Person = ({ person }) => {
         const [likes, setLikes] = React.useState(0);
         const [dislikes, setDislike] = React.useState(0);
 
@@ -73,6 +69,8 @@
         const [persons, setPersons] = React.useState([]);
         const [likes, setLikes] = React.useState(0);
         const [dislikes, setDislike] = React.useState(0);
+        const [allLikes,setAllLikes ] = React.useState(0);
+        const [allDisLikes,setAllDislikes] = React.useState(0);
 
         React.useEffect(() => {
           async function load() {
@@ -122,18 +120,15 @@
             <h1>
               Teraz znojdzemy
               {"  "}
-              <a
-                className="btn btn-primary"
-                href="https://swapi.dev/documentation#people"
-              >
+              <a className="btn btn-primary"href="https://swapi.dev/documentation#people" >
                 Szukaj
               </a>
               {"     "}
               <button onClick={onClick}> Vote </button>
             </h1>
-            All Likes: {likes}    
+            All Likes: {allLikes}    
             {"      "}       
-            All Dislikes: {dislikes}
+            All Dislikes: {allDisLikes}
             <br />
             <br />
             {persons.map((person) => (
