@@ -10,11 +10,8 @@
         //TO DO if data loading ,accsess denid or somthing else EXEPTION
 
         const isFinderValid = personList && personList.length > 0;
-        let likeCounter = 0;
+        
 
-        const like = (event) => {
-          likeCounter = likeCounter + 1;
-        };
 
         return (
           <div>
@@ -38,13 +35,26 @@
         const [likes, setLikes] = React.useState(0);
         const [dislikes, setDislike] = React.useState(0);
 
+       
         function like() {
           setLikes((old) => old + 1);
         }
 
         function dislike() {
           setDislike((old) => old + 1);
+
         }
+
+        // TODO Couning of votes 
+
+        
+        // function allLike() {
+        //   setAllLikes((old) => old + 1);
+        // }
+
+        // function  allDislike() {
+        //   setAllDislike((old) => old + 1);
+        // }
 
         return (
           <div>
@@ -67,8 +77,8 @@
 
       const App = () => {
         const [persons, setPersons] = React.useState([]);
-        const [likes, setLikes] = React.useState(0);
-        const [dislikes, setDislike] = React.useState(0);
+       
+       
         const [allLikes,setAllLikes ] = React.useState(0);
         const [allDisLikes,setAllDislikes] = React.useState(0);
 
@@ -95,25 +105,8 @@
         }, []);
 
         function onClick() {
-          alert("Hello! Please vote for your favorite character!");
+          alert("Witam! Vybor nie zakaz ! ");
         }
-
-        function like() {
-          setLikes((old) => old + 1);
-        }
-
-        function dislike() {
-          setDislike((old) => old + 1);
-        }
-
-        // function allLike() {
-        //   setAllLikes((old) => old + 1);
-        // }
-
-        // function  allDislike() {
-        //   setAllDislike((old) => old + 1);
-        // }
-
 
         return (
           <div>
@@ -124,7 +117,7 @@
                 Szukaj
               </a>
               {"     "}
-              <button onClick={onClick}> Vote </button>
+              <button onClick={onClick}> Głosuj </button>
             </h1>
             All Likes: {allLikes}    
             {"      "}       
@@ -143,5 +136,6 @@
     </script>
   </body>
 </html>
+
 
 
